@@ -101,14 +101,22 @@
 	<script src="js/main.js"></script>
 
 	<script>
-		var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+		// Get current Egypt time
+var nowInEgypt = new Date().toLocaleString("en-US", { timeZone: "Africa/Cairo" });
+var currentDateInEgypt = new Date(nowInEgypt);
 
-		// default example
-		simplyCountdown('.simply-countdown-one', {
-			year: 2024,
-			month: 12,
-			day: 05
-		});
+// Initialize the countdown to December 5, 2024, Egypt time
+simplyCountdown('.simply-countdown-one', {
+    year: 2024,
+    month: 12,
+    day: 5,
+    hours: 0, // Midnight Egypt time (adjust if needed)
+    minutes: 0,
+    seconds: 0
+});
+
+console.log("Current Egypt time:", currentDateInEgypt);
+
 
 
 	</script>
